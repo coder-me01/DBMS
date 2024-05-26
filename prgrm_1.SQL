@@ -43,18 +43,50 @@ CREATE TABLE BORROW (
     FOREIGN KEY (Bookid) REFERENCES BOOK(Bookid)
 );
 
-INSERT INTO BRANCH (Branchid, Branchname, HOD) VALUES (1, 'MCA', 'npk');
-INSERT INTO BRANCH (Branchid, Branchname, HOD) VALUES (2, 'MBA', 'bojanna');
-INSERT INTO BRANCH (Branchid, Branchname, HOD) VALUES (3, 'CSE', 'gtr');
-INSERT INTO BRANCH (Branchid, Branchname, HOD) VALUES (4, 'ISE', 'sudhamani');
-INSERT INTO BRANCH (Branchid, Branchname, HOD) VALUES (5, 'Electrical', 'sumathi');
+-- Insert data into BRANCH table
+INSERT INTO BRANCH (Branchid, Branchname, HOD)
+VALUES
+(1, 'mca', 'npk'),
+(2, 'mba', 'bojanna'),
+(3, 'cse', 'gtr'),
+(4, 'ise', 'sudhamani'),
+(5, 'electrical', 'sumathi');
 
+-- Insert data into STUDENT table
+INSERT INTO STUDENT (USN, Name, Address, Branchid, Sem)
+VALUES
+('1rn1', 'harish', 'bangalore', 1, 2),
+('1rn2', 'bharath', 'mysore', 2, 3),
+('1rn3', 'kiran', 'delhi', 3, 6),
+('1rn4', 'mahi', 'chennai', 4, 7),
+('1rn5', 'krishna', 'hubli', 5, 4);
 
-INSERT INTO STUDENT (USN, Name, Address, Branchid, Sem) VALUES ('1rn1', 'harish', 'bangalore', 1, 2);
-INSERT INTO STUDENT (USN, Name, Address, Branchid, Sem) VALUES ('1rn2', 'bharath', 'mysore', 2, 3);
-INSERT INTO STUDENT (USN, Name, Address, Branchid, Sem) VALUES ('1rn3', 'kiran', 'delhi', 3, 6);
-INSERT INTO STUDENT (USN, Name, Address, Branchid, Sem) VALUES ('1rn4', 'mahi', 'chennai', 4, 7);
-INSERT INTO STUDENT (USN, Name, Address, Branchid, Sem) VALUES ('1rn5', 'krishna', 'hubli', 5, 4);
+-- Insert data into BOOK table
+INSERT INTO BOOK (Bookid, Bookname, Authorid, Publisher, Branchid)
+VALUES
+(123, 'c prog', 1111, 'peanson', 1),
+(124, 'doms', 2222, 'murawhill', 1),
+(125, 'oops', 3333, 'sapna', 1),
+(126, 'unix', 4444, 'subhash', 1),
+(127, 'cprog', 5555, 'pearson', 1);
+
+-- Insert data into AUTHOR table
+INSERT INTO AUTHOR (Authorid, Authorname, Country, Age)
+VALUES
+(1111, 'navathe', 'india', 55),
+(2222, 'ritche', NULL, 44),
+(3333, 'RAMKRISHN', 'india', 55),
+(4444, 'sumitabha dennis', 'india', 38),
+(5555, 'ghjj', NULL, 66);
+
+-- Insert data into BORROW table
+INSERT INTO BORROW (USN, Bookid, Borrowed_Date)
+VALUES
+('Im1', 2222, '2000-01-10'),
+('Im2', 3333, '2016-03-05'),
+('Im3', 5555, '2010-06-01'),
+('Im5', 2222, '2000-05-19');
+
 
 Queries
 1.	 SELECT * 
